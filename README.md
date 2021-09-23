@@ -61,21 +61,27 @@ Quick tip you should create a separate user account respecing the best practice 
 
 5) create your .ci-gitlab.yml (you can find mine in the project)
 
-4) Register the backend with Gitlab (https://docs.gitlab.com/ee/user/infrastructure/iac/terraform_state.html)
+6) Register the backend with Gitlab (https://docs.gitlab.com/ee/user/infrastructure/iac/terraform_state.html)
 
-5) run the pipeline with your terraform files that you can find in this project
+7) run the pipeline with your terraform files that you can find in this project
 
-6) Push the changes
+8) Push the changes
 
-6) Open a merge request, review and approve your changes
+9) Open a merge request, review and approve your changes
 
-7) you can watch Terraform Pipeline provisioning the cluster and ECR to store future images if are willing to use it in the coming future
+10) you can watch Terraform Pipeline provisioning the cluster and ECR to store future images if are willing to use it in the coming future
 
-8) test the endpoint by accessing the loadbalancer address that you can find either via cli 
+11) test the endpoint by accessing the loadbalancer address that you can find either via cli 
+
+You can test the loadbalancer listening with the sample app exposed at the following address
+
+a7e0572d382dd42d5a6940741db36746-1847432855.us-east-1.elb.amazonaws.com
 
 
+The workflow is the following:
 
-The workflow is the following 
+Gilab run hosts the backend acts as pipeline for Terraform that provisions all the resources needed that includes Eks cluster and ECR and the IAM role.
 
-The Terraform pipeline provisions all the resource need that includes Eks cluster and ECR
+There is a file called "Namespaces" there in order to assign the resources to the correct under the same namespace.
+
 
